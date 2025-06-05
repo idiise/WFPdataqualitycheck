@@ -1,0 +1,162 @@
+---
+title: "Data Quality Check Report"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    toc: true
+    toc_float: yes
+    theme: united 
+params:
+  adv1: NA
+  adv2: NA
+  adv3: NA
+  adv4: NA
+  sca1: NA
+  sca2: NA
+  sca3: NA
+  hds1: NA
+  hds2: NA
+  hds3: NA
+  rcs1: NA
+  rcs2: NA
+  rcs3: NA
+  hhs1: NA
+  hhs2: NA
+  hhs3: NA
+  lcs1: NA
+  lcs2: NA
+  lcs3: NA
+  fcsdayplot: NA
+  rcsidayplot: NA
+    
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(fig.width=10, fig.height=7, error=FALSE, warning=FALSE, message=FALSE) 
+
+# Function to safely render plots
+safe_plot <- function(plot_obj, title = "Plot not available") {
+  if(is.null(plot_obj)) {
+    cat(paste("**", title, "**: Data not available or variables missing\n\n"))
+  } else {
+    tryCatch({
+      plot_obj
+    }, error = function(e) {
+      cat(paste("**", title, "**: Error generating plot -", e$message, "\n\n"))
+    })
+  }
+}
+```
+
+
+## Submission
+### Result by Admin1
+```{r, echo=FALSE}
+safe_plot(params$adv1, "Submission by Admin1")
+```
+
+### Result by Admin2
+
+```{r, echo=FALSE}
+safe_plot(params$adv2, "Submission by Admin2")
+```
+
+### Result by Enumerator
+```{r, echo=FALSE}
+safe_plot(params$adv3, "Submission by Enumerator")
+```
+### Result by Enumerator by admin2
+
+```{r, echo=FALSE}
+safe_plot(params$adv4, "Submission by Enumerator by Admin2")
+```
+
+
+## Food Consumption Score (FCS)
+### Result by Admin1
+
+```{r, echo=FALSE}
+safe_plot(params$sca1, "FCS by Admin1")
+```
+
+### Result by Admin2
+```{r, echo=FALSE}
+safe_plot(params$sca2, "FCS by Admin2")
+```
+
+### Result by Enumerator
+
+```{r, echo=FALSE}
+safe_plot(params$sca3, "FCS by Enumerator")
+```
+
+### Day-by-Day FCS Analysis
+
+```{r, echo=FALSE}
+safe_plot(params$fcsdayplot, "FCS Day-by-Day Analysis")
+```
+## Household Dietary Diversity Score (HDDS)
+### Result by Admin1
+
+```{r, echo=FALSE}
+safe_plot(params$hds1, "HDDS by Admin1")
+```
+### Result by Admin2
+
+```{r, echo=FALSE}
+safe_plot(params$hds2, "HDDS by Admin2")
+```
+### Result by Enumerator
+
+```{r, echo=FALSE}
+safe_plot(params$hds3, "HDDS by Enumerator")
+```
+## Reduced Copying Strategy Index (rCSI)
+### Result by Admin1
+
+```{r, echo=FALSE}
+safe_plot(params$rcs1, "rCSI by Admin1")
+```
+### Result by Admin2
+
+```{r, echo=FALSE}
+safe_plot(params$rcs2, "rCSI by Admin2")
+```
+
+### Result by Enumerator
+```{r, echo=FALSE}
+safe_plot(params$rcs3, "rCSI by Enumerator")
+```
+
+### Day-by-Day rCSI Analysis
+
+```{r, echo=FALSE}
+safe_plot(params$rcsidayplot, "rCSI Day-by-Day Analysis")
+```
+
+## Household Hunger Scale (HHS)
+### Result by Admin1
+```{r, echo=FALSE}
+safe_plot(params$hhs1, "HHS by Admin1")
+```
+### Résultat Admin2
+```{r, echo=FALSE}
+safe_plot(params$hhs2, "HHS by Admin2")
+```
+### Result by Enumerator
+```{r, echo=FALSE}
+safe_plot(params$hhs3, "HHS by Enumerator")
+```
+## Livelihood Coping Strategy Index (LCS)
+### Result by Admin1
+```{r, echo=FALSE}
+safe_plot(params$lcs1, "LCS by Admin1")
+```
+### Result by Admin2
+```{r, echo=FALSE}
+safe_plot(params$lcs2, "LCS by Admin2")
+```
+### Result by Enumerator
+
+```{r, echo=FALSE}
+safe_plot(params$lcs3, "LCS by Enumerator")

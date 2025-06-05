@@ -1,0 +1,29 @@
+Package: WFPdataqualitycheck
+Title: Data Quality Check for World Food Programme Food Security
+        Surveys
+Version: 0.2.0
+Date: 2025-05-31
+Author: Idrissa Dabo <ididabo@gmail.com>
+Maintainer: Idrissa Dabo <ididabo@gmail.com>
+Authors@R: 
+    person("Idrissa", "Dabo", , "ididabo@gmail.com", role = c("aut", "cre"))
+Description: A Shiny application for checking data quality and visualizing
+    key food security indicators in World Food Programme (WFP) surveys. The app
+    allows users to upload datasets in multiple formats (SPSS, Excel, CSV, Stata, text)
+    and analyze Food Consumption Score (FCS), Household Dietary Diversity Score (HDDS), 
+    Reduced Coping Strategy Index (rCSI), Household Hunger Scale (HHS), and Livelihood 
+    Coping Strategy Index (LCS). Results can be viewed by different administrative 
+    levels and by enumerator.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: argonDash, argonR, DT, dplyr, echarts4r, expss, formattable,
+        haven, htmltools, labelled, lubridate, maditr, plotly, readr,
+        readxl, rmarkdown, rstatix, shiny, shinyWidgets, stats,
+        stringr, tidyr, tools, utils
+Suggests: testthat (>= 3.0.0)
+Additional_repositories: https://ropensci.r-universe.dev
+Config/testthat/edition: 3
+NeedsCompilation: no
+Packaged: 2025-06-01 19:01:30 UTC; USER MSI
